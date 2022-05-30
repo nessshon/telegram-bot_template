@@ -1,6 +1,6 @@
 from aiogram import Dispatcher
 
-from bot.filters import IsAdmin, IsCreator, IsModer
+from bot.filters import IsCreator, IsAdmin, IsModer
 from bot.handlers.admins.commands.admin import admin_command
 from bot.handlers.admins.commands.admins import admins_command
 from bot.handlers.admins.commands.messages import messages_command
@@ -17,7 +17,7 @@ def register_admin_command_handlers(dp: Dispatcher):
         state='*')
     # -----sponsorship
     dp.register_message_handler(
-        sponsorship_command, IsCreator() | IsAdmin(),
+        sponsorship_command,  IsCreator() | IsAdmin(),
         commands='sponsorship',
         state='*')
     # -----messages

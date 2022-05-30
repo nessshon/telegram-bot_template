@@ -1,9 +1,16 @@
 from aiogram import Dispatcher
 
-from bot.handlers.admins.messages.admins import admins_message_handler, admins_add_message_handler, \
-    admins_status_message_handler, admins_add_confirm_message_handler, admins_first_name_message_handler, \
-    admins_choose_message_handler, admins_edit_name_message_handler, admins_edit_id_message_handler
+from bot.handlers.admins.messages.admins import (admins_message_handler,
+                                                 admins_add_message_handler,
+                                                 admins_status_message_handler,
+                                                 admins_add_confirm_message_handler,
+                                                 admins_first_name_message_handler,
+                                                 admins_choose_message_handler,
+                                                 admins_edit_name_message_handler,
+                                                 admins_edit_id_message_handler)
+
 from bot.handlers.admins.messages.main import main_admin_message_handler
+
 from bot.handlers.admins.messages.messages import (messages_list_message_handler,
                                                    messages_send_text_message_handler,
                                                    messages_confirm_message_handler,
@@ -13,7 +20,9 @@ from bot.handlers.admins.messages.buttons import (buttons_list_message_handler,
                                                   buttons_send_text_message_handler,
                                                   buttons_confirm_message_handler,
                                                   buttons_search_message_handler)
-from bot.handlers.admins.messages.newsletter import (newsletter_message_handler, newsletter_create_message_handler,
+
+from bot.handlers.admins.messages.newsletter import (newsletter_message_handler,
+                                                     newsletter_create_message_handler,
                                                      newsletter_add_buttons_message_handler,
                                                      newsletter_run_or_postpone_message_handler,
                                                      newsletter_run_confirm_message_handler,
@@ -32,14 +41,17 @@ from bot.handlers.admins.messages.sponsorship import (sponsorship_message_handle
                                                       sponsorship_send_chat_id_message_handler,
                                                       sponsorship_send_chat_title_message_handler,
                                                       sponsorship_add_message_handler)
-from bot.handlers.admins.messages.users import users_list_message_handler, users_choose_message_handler, \
-    users_search_message_handler, users_send_message_message_handler, users_send_message_confirm_message_handler
+
+from bot.handlers.admins.messages.users import (users_list_message_handler,
+                                                users_choose_message_handler,
+                                                users_search_message_handler,
+                                                users_send_message_message_handler,
+                                                users_send_message_confirm_message_handler)
 
 from bot.states import states
 
 
 def register_admin_message_handlers(dp: Dispatcher):
-
     dp.register_message_handler(
         main_admin_message_handler,
         state=states.admin.main,
